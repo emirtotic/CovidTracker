@@ -6,6 +6,7 @@ import com.covidtracker.exception.CovidRecordNotFoundException;
 import com.covidtracker.mapper.CovidMapper;
 import com.covidtracker.repository.CovidDbRepository;
 import com.covidtracker.service.CovidDbService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,13 +18,12 @@ import java.util.Optional;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class CovidDbServiceImpl implements CovidDbService {
 
-    @Autowired
-    private CovidDbRepository covidDbRepository;
+    private final CovidDbRepository covidDbRepository;
 
-    @Autowired
-    private CovidMapper covidMapper;
+    private final CovidMapper covidMapper;
 
     @Override
     public List<CovidRecordDto> findAllRecords() {

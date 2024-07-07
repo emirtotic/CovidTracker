@@ -2,6 +2,7 @@ package com.covidtracker.controller;
 
 import com.covidtracker.dto.CovidRecordDto;
 import com.covidtracker.service.CovidDbService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,10 +15,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/covid-results")
+@RequiredArgsConstructor
 public class CovidDbController {
 
-    @Autowired
-    private CovidDbService covidDbService;
+    private final CovidDbService covidDbService;
 
     @GetMapping("/all")
     public ResponseEntity<List<CovidRecordDto>> findAllRecords() {

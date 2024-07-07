@@ -85,7 +85,6 @@ public class CovidApiServiceImpl implements CovidApiService {
     private CovidRecord assembleRecord(List<CovidApiResponse> covidApiResponse,
                                        Optional<CovidRecord> retrievedRecord) {
 
-
         retrievedRecord.get().setCode(covidApiResponse.get(0).getCode());
         retrievedRecord.get().setCountry(covidApiResponse.get(0).getCountry());
         retrievedRecord.get().setConfirmed(covidApiResponse.get(0).getConfirmed());
@@ -98,7 +97,4 @@ public class CovidApiServiceImpl implements CovidApiService {
         return retrievedRecord.get();
 
     }
-
-
-
 }
