@@ -59,7 +59,8 @@ public class CovidApiServiceImpl implements CovidApiService {
             log.info("Response: {}", response.getBody());
 
             ObjectMapper mapper = new ObjectMapper();
-            covidApiResponse = mapper.readValue(response.getBody(), new TypeReference<List<CovidApiResponse>>() {});
+            covidApiResponse = mapper.readValue(response.getBody(), new TypeReference<List<CovidApiResponse>>() {
+            });
 
             Optional<CovidRecord> retrievedRecord = Optional.ofNullable(
                     covidDbRepository.findAllRecordsForCountry(covidApiResponse.get(0).getCode()));
@@ -85,14 +86,16 @@ public class CovidApiServiceImpl implements CovidApiService {
     private CovidRecord assembleRecord(List<CovidApiResponse> covidApiResponse,
                                        Optional<CovidRecord> retrievedRecord) {
 
-        retrievedRecord.get().setCode(covidApiResponse.get(0).getCode());
-        retrievedRecord.get().setCountry(covidApiResponse.get(0).getCountry());
-        retrievedRecord.get().setConfirmed(covidApiResponse.get(0).getConfirmed());
-        retrievedRecord.get().setRecovered(covidApiResponse.get(0).getRecovered());
-        retrievedRecord.get().setCritical(covidApiResponse.get(0).getCritical());
-        retrievedRecord.get().setDeaths(covidApiResponse.get(0).getDeaths());
-        retrievedRecord.get().setLastChange(covidApiResponse.get(0).getLastChange());
-        retrievedRecord.get().setLastUpdate(covidApiResponse.get(0).getLastUpdate());
+        if (covidApiResponse != null && !covidApiResponse.isEmpty()) {
+            retrievedRecord.get().setCode(covidApiResponse.get(0).getCode());
+            retrievedRecord.get().setCountry(covidApiResponse.get(0).getCountry());
+            retrievedRecord.get().setConfirmed(covidApiResponse.get(0).getConfirmed());
+            retrievedRecord.get().setRecovered(covidApiResponse.get(0).getRecovered());
+            retrievedRecord.get().setCritical(covidApiResponse.get(0).getCritical());
+            retrievedRecord.get().setDeaths(covidApiResponse.get(0).getDeaths());
+            retrievedRecord.get().setLastChange(covidApiResponse.get(0).getLastChange());
+            retrievedRecord.get().setLastUpdate(covidApiResponse.get(0).getLastUpdate());
+        }
 
         return retrievedRecord.get();
 
