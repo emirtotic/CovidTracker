@@ -25,12 +25,12 @@ public class CovidDbController {
         return new ResponseEntity<>(covidDbService.findAllRecords(), HttpStatus.OK);
     }
 
-    @GetMapping("/country/{countryCode}")
+    @GetMapping("/country/code/{countryCode}")
     public ResponseEntity<CovidRecordDto> findAllRecordsForCountry(@PathVariable(name = "countryCode") String countryCode) {
         return new ResponseEntity<>(covidDbService.findAllRecordsForCountry(countryCode), HttpStatus.OK);
     }
 
-    @DeleteMapping("/country/{countryCode}")
+    @DeleteMapping("/country/code/{countryCode}")
     public ResponseEntity<String> deleteCovidData(@PathVariable(name = "countryCode") String countryCode) {
         return new ResponseEntity<>(covidDbService.deleteCovidDataByCountryCode(countryCode), HttpStatus.OK);
     }
@@ -47,6 +47,11 @@ public class CovidDbController {
         Pageable pageable = PageRequest.of(page, size);
         Page<CovidRecordDto> recordsPage = covidDbService.findAllRecords(pageable);
         return new ResponseEntity<>(recordsPage, HttpStatus.OK);
+    }
+
+    @GetMapping("/country/name/{countryName}")
+    public ResponseEntity<CovidRecordDto> findAllRecordsForCountryByName(@PathVariable(name = "countryName") String countryName) {
+        return new ResponseEntity<>(covidDbService.findAllRecordsForCountryByName(countryName), HttpStatus.OK);
     }
 
 }

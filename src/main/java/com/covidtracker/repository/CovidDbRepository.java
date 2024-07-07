@@ -19,4 +19,7 @@ public interface CovidDbRepository extends JpaRepository<CovidRecord, Long> {
 
     Page<CovidRecord> findAll(Pageable pageable);
 
+    @Query("Select r from CovidRecord r where r.country = :countryName")
+    CovidRecord findAllRecordsForCountryByName(@Param("countryName") String countryName);
+
 }

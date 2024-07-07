@@ -72,4 +72,13 @@ class CovidDbControllerTest {
         assertEquals(recordsPage.getContent().size(), dtos.size());
         verify(covidDbService, times(1)).findAllRecords(pageable);
     }
+
+    @Test
+    @DisplayName("Find Country Records from DB by name Test")
+    void findAllRecordsForCountryByName() {
+        when(covidDbService.findAllRecordsForCountryByName(anyString())).thenReturn(new CovidRecordDto());
+        CovidRecordDto dto = covidDbController.findAllRecordsForCountryByName(anyString()).getBody();
+        assertNotNull(dto);
+        verify(covidDbService, times(1)).findAllRecordsForCountryByName(anyString());
+    }
 }

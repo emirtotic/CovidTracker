@@ -64,7 +64,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/covid-results/country/rs",
+					"raw": "http://localhost:8080/api/v1/covid-results/country/code/rs",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -75,7 +75,35 @@
 						"v1",
 						"covid-results",
 						"country",
+						"code",
 						"rs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindDataFromDbByCountryName",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/covid-results/country/name/serbia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"covid-results",
+						"country",
+						"name",
+						"serbia"
 					]
 				}
 			},
@@ -204,7 +232,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/covid-results/country/rs",
+					"raw": "http://localhost:8080/api/v1/covid-results/country/code/rs",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -215,6 +243,7 @@
 						"v1",
 						"covid-results",
 						"country",
+						"code",
 						"rs"
 					]
 				}

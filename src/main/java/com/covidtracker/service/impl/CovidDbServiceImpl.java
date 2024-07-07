@@ -63,4 +63,9 @@ public class CovidDbServiceImpl implements CovidDbService {
     public Page<CovidRecordDto> findAllRecords(Pageable pageable) {
         return covidDbRepository.findAll(pageable).map(covidMapper::mapToDto);
     }
+
+    @Override
+    public CovidRecordDto findAllRecordsForCountryByName(String countryName) {
+        return covidMapper.mapToDto(covidDbRepository.findAllRecordsForCountryByName(countryName));
+    }
 }
