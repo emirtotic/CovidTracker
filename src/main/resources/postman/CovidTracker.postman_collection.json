@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "c810233b-347c-447c-85d5-49b3fab53ef9",
+		"name": "CovidTracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11895096"
+	},
+	"item": [
+		{
+			"name": "GetDataFromApiByCountryCode",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/covid/get-all-data/rs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"covid",
+						"get-all-data",
+						"rs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindAllDataFromDb",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/covid-results/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"covid-results",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindDataFromDbByCountryCode",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/covid-results/country/rs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"covid-results",
+						"country",
+						"rs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindDataFromBalkan",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/covid-results/all/balkan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"covid-results",
+						"all",
+						"balkan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindAllDataFromPaged",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/covid-results/paged/all?page=2&size=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"covid-results",
+						"paged",
+						"all"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPdfReportForCountry",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/covid-report/pdf/it",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"covid-report",
+						"pdf",
+						"it"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetExcelReportForCountry",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/covid-report/excel/it",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"covid-report",
+						"excel",
+						"it"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteDataFromDbByCountryCode",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/covid-results/country/rs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"covid-results",
+						"country",
+						"rs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
