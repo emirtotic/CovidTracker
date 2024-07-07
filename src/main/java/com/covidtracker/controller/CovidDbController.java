@@ -1,0 +1,51 @@
+package com.covidtracker.controller;
+
+import com.covidtracker.dto.CovidRecordDto;
+import com.covidtracker.service.CovidDbService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v1/covid-results")
+public class CovidDbController {
+
+    @Autowired
+    private CovidDbService covidDbService;
+
+    @GetMapping("/all")
+    public ResponseEntity<List<CovidRecordDto>> findAllRecords() {
+        return new ResponseEntity<>(covidDbService.findAllRecords(), HttpStatus.OK);
+    }
+
+    @GetMapping("/country/{countryCode}")
+    public ResponseEntity<CovidRecordDto> findAllRecordsForCountry(@PathVariable(name = "countryCode") String countryCode) {
+        return new ResponseEntity<>(covidDbService.findAllRecordsForCountry(countryCode), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/country/{countryCode}")
+    public ResponseEntity<String> deleteCovidData(@PathVariable(name = "countryCode") String countryCode) {
+        return new ResponseEntity<>(covidDbService.deleteCovidDataByCountryCode(countryCode), HttpStatus.OK);
+    }
+
+    @GetMapping("/all/balkan")
+    public ResponseEntity<List<CovidRecordDto>> findAllRecordsFromBalkan() {
+        return new ResponseEntity<>(covidDbService.findAllRecordsFromBalkan(), HttpStatus.OK);
+    }
+
+    @GetMapping("/paged/all")
+    public ResponseEntity<Page<CovidRecordDto>> findAllRecordsPaged(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<CovidRecordDto> recordsPage = covidDbService.findAllRecords(pageable);
+        return new ResponseEntity<>(recordsPage, HttpStatus.OK);
+    }
+
+}
