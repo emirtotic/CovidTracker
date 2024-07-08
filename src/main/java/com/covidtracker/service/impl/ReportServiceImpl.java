@@ -35,6 +35,8 @@ public class ReportServiceImpl implements ReportService {
         CountryReport countryReport = prepareDataForCountryReport(countryCode);
         params.put("countryReport", countryReport);
 
+        log.info("Generating PDF report for [{}] country...", countryCode);
+
         return jasperService.exportReportToPDF("/report/country-report.jrxml",
                 params,
                 Collections.singletonList(countryReport));
@@ -66,6 +68,7 @@ public class ReportServiceImpl implements ReportService {
 
         CountryReport countryReport = new CountryReport();
         CovidRecordDto allRecordsForCountry = covidDbService.findAllRecordsForCountry(code);
+        log.info("Preparing data for the report...");
 
         if (allRecordsForCountry != null) {
             countryReport.setTitle("Covid19 report for " + allRecordsForCountry.getCountry());
