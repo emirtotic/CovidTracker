@@ -12,7 +12,12 @@ public class ScheduledTasks {
     private RestTemplate restTemplate;
 
     private final String REFRESH_COVID_DATA_FOR_SERBIA = "http://localhost:8080/covid/get-all-data/rs";
-    @Scheduled(cron = "0 0 10 * * ?") // Timer set at 10h every day. (@Scheduled(cron = "0 * * * * *") is every second)
+
+    /**
+     * Cron job for refreshing RS data every day at 10 AM
+     * For testing purpose, change it to every minute with @Scheduled(cron = "0 * * * * *")
+     */
+    @Scheduled(cron = "0 0 10 * * ?")
     public void refreshDataForSerbia() {
         restTemplate.getForObject(REFRESH_COVID_DATA_FOR_SERBIA, String.class);
     }
