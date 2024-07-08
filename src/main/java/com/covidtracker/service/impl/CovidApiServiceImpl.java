@@ -58,9 +58,10 @@ public class CovidApiServiceImpl implements CovidApiService {
                     HttpMethod.GET, new HttpEntity<>(headers), String.class);
             log.info("Response: {}", response.getBody());
 
+            log.info("Fetching covid data for [{}] country...", countryCode.toUpperCase());
+
             ObjectMapper mapper = new ObjectMapper();
-            covidApiResponse = mapper.readValue(response.getBody(), new TypeReference<List<CovidApiResponse>>() {
-            });
+            covidApiResponse = mapper.readValue(response.getBody(), new TypeReference<List<CovidApiResponse>>() {});
 
             Optional<CovidRecord> retrievedRecord = Optional.ofNullable(
                     covidDbRepository.findAllRecordsForCountry(covidApiResponse.get(0).getCode()));

@@ -54,6 +54,8 @@ public class CountryApiServiceImpl implements CountryApiService {
                     HttpMethod.GET, new HttpEntity<>(headers), String.class);
             log.info("Response: {}", response.getBody());
 
+            log.info("Fetching codes data for countries...");
+
             ObjectMapper mapper = new ObjectMapper();
             countryApiResponses = mapper.readValue(response.getBody(), new TypeReference<List<CountryApiResponse>>() {});
 
