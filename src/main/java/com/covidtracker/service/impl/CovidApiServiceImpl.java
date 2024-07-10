@@ -1,6 +1,6 @@
 package com.covidtracker.service.impl;
 
-import com.covidtracker.dto.CovidApiResponse;
+import com.covidtracker.dto.covid.CovidApiResponse;
 import com.covidtracker.entity.CovidRecord;
 import com.covidtracker.exception.CovidRecordNotFoundException;
 import com.covidtracker.mapper.CovidMapper;

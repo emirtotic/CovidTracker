@@ -1,6 +1,6 @@
 package com.covidtracker.service.impl;
 
-import com.covidtracker.dto.CovidRecordDto;
+import com.covidtracker.dto.covid.CovidRecordDto;
 import com.covidtracker.entity.CovidRecord;
 import com.covidtracker.exception.CovidRecordNotFoundException;
 import com.covidtracker.mapper.CovidMapper;
@@ -8,7 +8,6 @@ import com.covidtracker.repository.CovidDbRepository;
 import com.covidtracker.service.CovidDbService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

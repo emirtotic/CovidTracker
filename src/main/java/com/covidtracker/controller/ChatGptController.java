@@ -2,7 +2,6 @@ package com.covidtracker.controller;
 
 import com.covidtracker.service.ChatGptService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,15 +14,6 @@ import org.slf4j.LoggerFactory;
 @RestController
 @RequestMapping("/bot/covid")
 public class ChatGptController {
-
-    @Value("${openai.model}")
-    private String model;
-
-    @Value("${openai.api.key}")
-    private String key;
-
-    @Value("${openai.api.url}")
-    private String url;
 
     @Autowired
     private ChatGptService chatGptService;

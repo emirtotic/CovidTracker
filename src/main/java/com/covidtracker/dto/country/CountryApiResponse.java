@@ -1,4 +1,4 @@
-package com.covidtracker.dto;
+package com.covidtracker.dto.country;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

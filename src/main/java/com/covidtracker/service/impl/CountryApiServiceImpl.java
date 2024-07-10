@@ -1,6 +1,6 @@
 package com.covidtracker.service.impl;
 
-import com.covidtracker.dto.CountryApiResponse;
+import com.covidtracker.dto.country.CountryApiResponse;
 import com.covidtracker.entity.Country;
 import com.covidtracker.mapper.CountryMapper;
 import com.covidtracker.repository.CountriesDbRepository;

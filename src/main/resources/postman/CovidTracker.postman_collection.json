@@ -31,6 +31,62 @@
 			"response": []
 		},
 		{
+			"name": "Find Your Embassies",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/covid/find-your-embassies?source=serbia&destination=italy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"covid",
+						"find-your-embassies"
+					],
+					"query": [
+						{
+							"key": "source",
+							"value": "serbia"
+						},
+						{
+							"key": "destination",
+							"value": "italy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCountriesAndCodes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/covid/get-all-countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"covid",
+						"get-all-countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "FindAllDataFromDb",
 			"request": {
 				"auth": {
@@ -50,6 +106,36 @@
 						"v1",
 						"covid-results",
 						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOT",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bot/covid/chat?prompt=Tell me about covid 19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bot",
+						"covid",
+						"chat"
+					],
+					"query": [
+						{
+							"key": "prompt",
+							"value": "Tell me about covid 19"
+						}
 					]
 				}
 			},
@@ -144,7 +230,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/covid-results/paged/all?page=2&size=5",
+					"raw": "http://localhost:8080/api/v1/covid-results/paged/all?page=3&size=5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -160,7 +246,7 @@
 					"query": [
 						{
 							"key": "page",
-							"value": "2"
+							"value": "3"
 						},
 						{
 							"key": "size",

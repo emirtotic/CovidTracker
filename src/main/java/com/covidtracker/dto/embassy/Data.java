@@ -1,4 +1,4 @@
-package com.covidtracker.dto;
+package com.covidtracker.dto.embassy;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,9 +9,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class CountryDto {
+public class Data {
 
-    private String name;
-    private String alpha2code;
+    private String address;
+    private String phone;
 
 }

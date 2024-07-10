@@ -1,6 +1,6 @@
 package com.covidtracker.service;
 
-import com.covidtracker.dto.CovidRecordDto;
+import com.covidtracker.dto.covid.CovidRecordDto;
 import com.covidtracker.entity.CovidRecord;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

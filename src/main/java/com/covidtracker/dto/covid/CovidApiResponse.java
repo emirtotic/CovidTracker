@@ -1,4 +1,4 @@
-package com.covidtracker.dto;
+package com.covidtracker.dto.covid;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

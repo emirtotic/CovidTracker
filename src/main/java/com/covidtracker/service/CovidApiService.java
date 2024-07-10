@@ -1,6 +1,6 @@
 package com.covidtracker.service;
 
-import com.covidtracker.dto.CovidApiResponse;
+import com.covidtracker.dto.covid.CovidApiResponse;
 
 import java.util.List;
 

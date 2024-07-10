@@ -1,6 +1,6 @@
 package com.covidtracker.service.impl;
 
-import com.covidtracker.dto.CovidRecordDto;
+import com.covidtracker.dto.covid.CovidRecordDto;
 import com.covidtracker.entity.CovidRecord;
 import com.covidtracker.mapper.CovidMapper;
 import com.covidtracker.repository.CovidDbRepository;

@@ -1,11 +1,8 @@
 package com.covidtracker.mapper;
 
-import com.covidtracker.dto.CountryApiResponse;
-import com.covidtracker.dto.CountryDto;
-import com.covidtracker.dto.CovidApiResponse;
-import com.covidtracker.dto.CovidRecordDto;
+import com.covidtracker.dto.country.CountryApiResponse;
+import com.covidtracker.dto.country.CountryDto;
 import com.covidtracker.entity.Country;
-import com.covidtracker.entity.CovidRecord;
 import org.mapstruct.Mapper;
 
 import java.util.List;

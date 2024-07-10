@@ -1,6 +1,6 @@
 package com.covidtracker.service.impl;
 
-import com.covidtracker.dto.CovidRecordDto;
+import com.covidtracker.dto.covid.CovidRecordDto;
 import com.covidtracker.entity.CountryReport;
 import com.covidtracker.service.CovidDbService;
 import com.covidtracker.service.JasperService;
