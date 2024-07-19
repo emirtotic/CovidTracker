@@ -1,4 +1,4 @@
-package com.covidtracker.service;
+package com.covidtracker.service.apiServices;
 
 import com.covidtracker.dto.country.CountryApiResponse;
 

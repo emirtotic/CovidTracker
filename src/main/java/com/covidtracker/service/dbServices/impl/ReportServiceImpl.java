@@ -1,10 +1,10 @@
-package com.covidtracker.service.impl;
+package com.covidtracker.service.dbServices.impl;
 
 import com.covidtracker.dto.covid.CovidRecordDto;
 import com.covidtracker.entity.CountryReport;
-import com.covidtracker.service.CovidDbService;
-import com.covidtracker.service.JasperService;
-import com.covidtracker.service.ReportService;
+import com.covidtracker.service.dbServices.CovidDbService;
+import com.covidtracker.service.dbServices.JasperService;
+import com.covidtracker.service.dbServices.ReportService;
 import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

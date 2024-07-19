@@ -1,10 +1,10 @@
-package com.covidtracker.service.impl;
+package com.covidtracker.service.apiServices.impl;
 
 import com.covidtracker.dto.country.CountryApiResponse;
 import com.covidtracker.entity.Country;
 import com.covidtracker.mapper.CountryMapper;
 import com.covidtracker.repository.CountriesDbRepository;
-import com.covidtracker.service.CountryApiService;
+import com.covidtracker.service.apiServices.CountryApiService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

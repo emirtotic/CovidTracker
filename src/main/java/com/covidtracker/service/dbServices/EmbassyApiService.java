@@ -1,4 +1,4 @@
-package com.covidtracker.service;
+package com.covidtracker.service.dbServices;
 
 import com.covidtracker.dto.embassy.EmbassyApiResponse;
 

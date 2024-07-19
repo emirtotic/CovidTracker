@@ -1,8 +1,8 @@
-package com.covidtracker.service.impl;
+package com.covidtracker.service.apiServices.impl;
 
 import com.covidtracker.chatgpt.ChatGptRequest;
 import com.covidtracker.chatgpt.ChatGptResponse;
-import com.covidtracker.service.ChatGptService;
+import com.covidtracker.service.apiServices.ChatGptService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

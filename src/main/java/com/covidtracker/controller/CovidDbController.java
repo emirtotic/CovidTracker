@@ -1,7 +1,7 @@
 package com.covidtracker.controller;
 
 import com.covidtracker.dto.covid.CovidRecordDto;
-import com.covidtracker.service.CovidDbService;
+import com.covidtracker.service.dbServices.CovidDbService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

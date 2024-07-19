@@ -1,7 +1,7 @@
-package com.covidtracker.service.impl;
+package com.covidtracker.service.dbServices.impl;
 
 import com.covidtracker.dto.embassy.EmbassyApiResponse;
-import com.covidtracker.service.EmbassyApiService;
+import com.covidtracker.service.dbServices.EmbassyApiService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

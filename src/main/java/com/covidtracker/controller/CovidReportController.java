@@ -1,6 +1,6 @@
 package com.covidtracker.controller;
 
-import com.covidtracker.service.ReportService;
+import com.covidtracker.service.dbServices.ReportService;
 import lombok.RequiredArgsConstructor;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.http.HttpStatus;

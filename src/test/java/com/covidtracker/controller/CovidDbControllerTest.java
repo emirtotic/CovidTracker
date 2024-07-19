@@ -1,7 +1,7 @@
 package com.covidtracker.controller;
 
 import com.covidtracker.dto.covid.CovidRecordDto;
-import com.covidtracker.service.CovidDbService;
+import com.covidtracker.service.dbServices.CovidDbService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

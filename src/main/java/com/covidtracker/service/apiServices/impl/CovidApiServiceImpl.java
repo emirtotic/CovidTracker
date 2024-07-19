@@ -1,12 +1,12 @@
-package com.covidtracker.service.impl;
+package com.covidtracker.service.apiServices.impl;
 
 import com.covidtracker.dto.covid.CovidApiResponse;
 import com.covidtracker.entity.CovidRecord;
 import com.covidtracker.exception.CovidRecordNotFoundException;
 import com.covidtracker.mapper.CovidMapper;
 import com.covidtracker.repository.CovidDbRepository;
-import com.covidtracker.service.CovidApiService;
-import com.covidtracker.service.CovidDbService;
+import com.covidtracker.service.apiServices.CovidApiService;
+import com.covidtracker.service.dbServices.CovidDbService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

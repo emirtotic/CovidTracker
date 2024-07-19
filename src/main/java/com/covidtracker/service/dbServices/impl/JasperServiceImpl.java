@@ -1,7 +1,7 @@
-package com.covidtracker.service.impl;
+package com.covidtracker.service.dbServices.impl;
 
 import com.covidtracker.exception.ApplicationException;
-import com.covidtracker.service.JasperService;
+import com.covidtracker.service.dbServices.JasperService;
 import lombok.RequiredArgsConstructor;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;

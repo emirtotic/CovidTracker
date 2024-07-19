@@ -1,6 +1,6 @@
 package com.covidtracker.controller;
 
-import com.covidtracker.service.ChatGptService;
+import com.covidtracker.service.apiServices.ChatGptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
