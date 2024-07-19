@@ -1,7 +1,6 @@
 package com.covidtracker.service.impl;
 
 import com.covidtracker.dto.embassy.EmbassyApiResponse;
-import com.covidtracker.mapper.CovidMapper;
 import com.covidtracker.service.EmbassyApiService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -21,9 +20,6 @@ public class EmbassyApiServiceImpl implements EmbassyApiService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Autowired
-    private CovidMapper covidMapper;
-
     @Value("${rapidEmbassyApiUrl}")
     private String rapidEmbassyApiUrl;
     @Value("${x-rapidapi-ua}")
@@ -42,13 +38,19 @@ public class EmbassyApiServiceImpl implements EmbassyApiService {
             headers.set("x-rapidapi-key", key);
             headers.set("x-rapidapi-host", host);
 
-            String url = rapidEmbassyApiUrl + "?source=" + source + "&destination=" + destination;
+            StringBuilder sb = new StringBuilder();
+            String url = sb.append(rapidEmbassyApiUrl)
+                    .append("?source=")
+                    .append(source.toLowerCase())
+                    .append("&destination=")
+                    .append(destination.toLowerCase())
+                    .toString();
 
             ResponseEntity<String> response = restTemplate.exchange(url,
                     HttpMethod.GET, new HttpEntity<>(headers), String.class);
             log.info("Response: {}", response.getBody());
 
-            log.info("Finding ", source + " embassies in " + destination + "...");
+            log.info("Finding " + source + " embassies in " + destination + "...");
 
             ObjectMapper mapper = new ObjectMapper();
             EmbassyApiResponse embassyApiResponse
